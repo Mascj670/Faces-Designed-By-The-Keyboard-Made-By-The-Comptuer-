@@ -1,0 +1,345 @@
+// Declaring face and text size 
+let face = "-_^";
+let font = 175;
+
+// Declaring Red(r),Green(g),Blue(b)
+let r = 0;
+let g = 0;
+let b = 0;
+
+//Declaring Text Location
+let x = 220;
+let y = 220;
+
+//Declaring background
+let r2 = 0;
+let g2 = 0;
+let b2 = 0;
+
+
+//Canvas size
+function setup() {
+  createCanvas(400, 400);
+  colorMode(RGB, width, height, 100);
+  print("Faces- desinged by the keyboard, created by the computer.");
+  print("#1-9 & A-Z unlocks 38 face varations");
+  print("LEFT_SHIFT to restart");
+  print("MOUSE_PRESS to fill face with lavander tone");
+  print("SPACE to randomly change fill of face");
+  print("UP_ARROW to change color of background")
+  print("DOWN_ARROW to change font size randomly");
+  print("LEFT_ARROW to place face in location of cursor");
+  print("RIGHT_ARROW to randomly locate the face")
+  print("MINUS key to srink face by five")
+  print("PLUS key to enlarge face by five")
+  print("Enjoy ;)")
+}
+
+function draw() {
+  
+  background(r2, g2, b2);
+
+  //Creating star effect 
+  noFill();
+  stroke(255, 255, 255); 
+  strokeWeight(2);
+
+  push();
+  translate(width - 200, height - 200)
+  shearX(radians(31));
+  pop();
+  
+for (let i = 0; i < 25; i++) {
+  point(random(width), random(height));
+  }
+  
+  
+  //If mouse is pressed face becomes solid white
+  if (mouseIsPressed === true) {
+    fill(255, 255, 255);
+  } else {
+    fill(r, g, b);
+  }
+  
+  textSize(font);
+  textAlign(CENTER);
+  text(face , x,  y);
+  
+  
+
+}
+
+function keyPressed() {
+  
+  //Color change
+  
+  //Fill face a random color- Key 'Space' 
+  if (keyCode === 32) { 
+   r = random(0, 255);
+   g = random(0, 255);
+   b = random(0, 255);
+  } 
+  
+  //Controls
+
+  
+  //Reset to begining face- key 'Left_Shift'
+   if(keyCode === 16){
+     
+    face = ("-_^");
+     
+    font = 175;
+     
+    r = 0;
+    g = 0;
+    b = 0;
+     
+    r2 = 0;
+    g2 = 0;
+    b2 = 0;
+     
+    x = 220;
+    y = 220; 
+     
+    bg = 0;
+    
+    print("Reset successful!");
+     
+  }
+  
+  
+  //Increase face size by 5- key '+'
+  if (keyCode === 187) { 
+   font = font + 5;
+   print("Text Size =")
+     console.log(font);
+  } 
+  
+  //Srink face size by 5- key '-'
+  if (keyCode === 189) { 
+   font = font - 5;
+   print("Text Size =")
+     console.log(font);
+  } 
+  
+  //Allows user to place face- Key 'Left_Arrow'
+  if (keyCode === 37) { 
+    x = mouseX = mouseX;
+    y = mouseY = mouseY;
+    print("X-Coordinate =")
+      console.log(x);
+    print("Y-Coordinate =")
+      console.log(y);
+  } 
+  
+  //Randomly change font size from 10-1000- Key 'Down_Arrow'
+  if (keyCode === 40) { 
+   font = random(10, 1000);
+   print("Text Size =")
+     console.log(font);
+  } 
+  
+  //Randomly changes color of background- Key 'Up_Arrow'
+  if (keyCode === 38) { 
+   r2 = random(0, 255);
+   g2 = random(0, 255);
+   b2 = random(0, 255);
+  
+  } 
+  
+  //Randomly locates the face within the 400, 400 canvas- Key 'Right_Arrow'
+  if (keyCode === 39) { 
+    x = random(0, 400);
+    y = random(0, 400);
+    print("X-Coordinate =")
+      console.log(x);
+    print("Y-Coordinate =")
+      console.log(y);
+  } 
+  
+  //Face Variations:
+  
+  //Face 1- Key '#1'
+  if (keyCode === 49) { 
+   face = ("^_-");
+  } 
+  
+  //Face 2- Key '#2'
+  if(keyCode === 50){
+    face = (">_<");
+  }
+  
+  //Face 3- Key '#3'
+  if(keyCode === 51){
+    face = (":-0");
+  }
+  
+  //Face 4- Key '#4'
+  if(keyCode === 52){
+    face = ("-_-");
+  }
+  
+  //Face 5-  '#5'
+  if(keyCode === 53){
+    face = (";)");
+  }
+  
+  //Face 6- Key '#6'
+  if(keyCode === 54){
+    face = (":(");
+  }
+  
+  //Face 7- Key '#7'
+  if(keyCode === 55){
+    face = (":0");
+  }
+  
+  //Face 8- Key '#8'
+  if(keyCode === 56){
+    face = ("o_o");
+  }
+  
+  //Face 9- Key '#9'
+  if(keyCode === 57){
+    face = ("^_^");
+  }
+  
+  
+  //Face 10- key '#0'
+  if(keyCode === 48){
+    face = ("0_0");
+  }
+  
+  //Face 11- key 'Q'
+  if(keyCode === 81){
+    face = ("*_*");
+  }
+  
+  //Face 12- key 'W'
+  if(keyCode === 87){
+    face = ('"-"');
+  }
+  
+  //Face 13- key 'E'
+  if(keyCode === 69){
+    face = (":/");
+  }
+  
+  //Face 14- key 'R'
+  if(keyCode === 82){
+    face = (":]");
+  }
+  
+  //Face 16- key 'T'
+  if(keyCode === 84){
+    face = (":[");
+  }
+  
+  //Face 17- key 'Y'
+  if(keyCode === 89){
+    face = ("o_O");
+  }
+  
+  //Face 18- key 'U'
+  if(keyCode === 85){
+    face = ("=_=");
+  }
+  
+  //Face 19- key 'I'
+  if(keyCode === 73){
+    face = ("$_$");
+  }
+  
+  //FAce 20- key 'O'
+  if(keyCode === 79){
+    face = ("._.");
+  }
+  
+  //Face 21- key 'P'
+  if(keyCode === 80){
+    face = (":P");
+  }
+  
+  //Face 22- key 'A'
+  if(keyCode === 65){
+    face = ("+_+");
+  }
+  
+  //Face 23- key 'S'
+  if(keyCode === 83){
+    face = ("O_o");
+  }
+  
+  //FAce 24- key 'D'
+  if(keyCode === 68){
+    face = ("=_+");
+  }
+  
+  //Face 26- key 'F'
+  if(keyCode === 70){
+    face = ("@_@");
+    font = 125;
+  }
+    
+  //Face 27- key 'G'
+  if(keyCode === 71){
+    face = ("-_o");
+  }
+  
+  //Face 28- key 'H'
+  if(keyCode === 72){
+    face = ("=)");
+  }
+
+  //Face 29- key 'J'
+  if(keyCode === 74){
+    face = ("&_&");
+  }
+  
+  //Face 30- key 'K'
+  if(keyCode === 75){
+    face = (":$");
+  }
+  
+  //Face 31- key 'L'
+  if(keyCode === 76){
+    face = ("=(")
+  }
+  
+  //Face 32- key 'Z'
+  if(keyCode === 90){
+    face = (" ;| ");
+  }
+  
+  //Face 33- key 'X'
+  if(keyCode === 88){
+    face = ("+_0");
+  }
+  
+  //Face 34- key 'C'
+  if(keyCode === 67){
+    face = ("=_-");
+  }
+  
+  //Face 35- key 'V'
+  if(keyCode === 86){
+    face = (":V ");
+  }
+  
+  //Face 36- key 'B'
+  if(keyCode === 66){
+    face = (":V ");
+  }
+  
+  //Face 37- key 'N'
+  if(keyCode === 78){
+    face = ("(-_-)");
+    font = 125;
+  }
+  
+  //Face 38- key 'M'
+  if(keyCode === 77){
+    face = (":)");
+  }
+  
+}
